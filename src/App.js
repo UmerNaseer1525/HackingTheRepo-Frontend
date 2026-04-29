@@ -440,7 +440,12 @@ export default function App() {
         </div>
       </div>
 
-      {/* Nav tabs */}
+     <div style={{ 
+    display: 'flex', 
+    gap: '10px', 
+    marginBottom: '20px',
+    flexWrap: 'wrap' 
+}}></div>
       <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.25rem' }}>
         {['dashboard', 'job'].map(v => (
           <button
@@ -468,7 +473,12 @@ export default function App() {
       {view === 'dashboard' && (
         <>
           {/* Stats */}
-          <div className="stats-row">
+          <div style={{ 
+    display: 'grid', 
+    gridTemplateColumns: window.innerWidth < 768 ? 'repeat(2, 1fr)' : 'repeat(4, 1fr)', 
+    gap: '10px', 
+    marginBottom: '20px' 
+}}>
             <StatCard icon={Database}   label="Total Jobs"    value={totalJobs}     color="#58a6ff" />
             <StatCard icon={CheckCircle} label="Completed"    value={completedJobs} color="#3fb950" />
             <StatCard icon={XCircle}    label="Failed"        value={failedJobs}    color="#f85149" />
